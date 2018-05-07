@@ -45,10 +45,7 @@ static const UIEdgeInsets SVEdge = {10,10,10,10};
         _columMaxYArr = [NSMutableArray arrayWithCapacity:3];
     }
     return _columMaxYArr;
-    
-//    <#returnType#>(^<#blockName#>)(<#parameterTypes#>) = ^(<#parameters#>) {
-//        <#statements#>
-//    };
+
 }
 
 #warning 3
@@ -178,5 +175,5 @@ static const UIEdgeInsets SVEdge = {10,10,10,10};
     return SVEdge;
 }
 @end
-// static const UIEdgeInsets SVEdge = {10,10,10,10};
+
 // 数组为空会崩溃,重写perpare方法

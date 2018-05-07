@@ -39,8 +39,6 @@
 
 #warning second
 -(CGFloat)waterFallLayout:(SVWaterFallLayout *)layout indexPath:(NSIndexPath *)path itemWith:(CGFloat)width {
-    // ss
-    NSLog(@"-");
     SVClose *close = self.closesArr[path.item]; // 在这里用到indexPath参数的!要从懒加载数组中获取数据
     CGFloat hight = close.h / (CGFloat)close.w * width;
     return hight;
@@ -83,8 +81,8 @@ static NSString * const reuseIdentifier = @"Cell";
         [weakSelf.closesArr addObjectsFromArray:tempArr];
         [weakSelf.collectionView reloadData];
         [weakSelf.collectionView.footer endRefreshing];
-                NSLog(@"%@",tempArr);
-                NSLog(@"%ld",weakSelf.closesArr.count);
+        NSLog(@"%@",tempArr);
+        NSLog(@"%ld",weakSelf.closesArr.count);
     }];
 //    NSLog(@"%ld",self.closesArr.count);
 }
@@ -107,15 +105,12 @@ static NSString * const reuseIdentifier = @"Cell";
 
 -(NSMutableArray *)closesArr {
     if (!_closesArr) {
-        // 加载plist数据
         _closesArr = [[NSMutableArray alloc] init];
     }
     return _closesArr;
 }
 @end
-// collectionView registerClass tableView不哟????
+// collectionView registerClass
 // 目标:加载数据-拖plist,创建模型,字典转模型,从网络加载的数据,在viewDidLoad里面字典转模型
-// 自定义cell,设置图片和
-// get方法声明
 // 先写最核心的协议
 // 如果别人设置edge为负值怎么办?判断,报错?
